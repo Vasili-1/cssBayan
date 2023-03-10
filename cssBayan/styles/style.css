@@ -1,0 +1,33 @@
+body {
+  background: #f0eed1;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.radio {
+  appearance: none;
+}
+
+.acc__content {
+  display: none;
+}
+
+input:checked ~ .acc__content {
+  display: block;
+}
+
+label:hover ~ .acc__content {
+  display: block;
+}
+
+.photo {
+  max-width: 200px;
+  max-height: 200px;
+}
