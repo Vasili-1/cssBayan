@@ -1,14 +1,60 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
   background: #f0eed1;
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #119178;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  flex-wrap: wrap;
+  max-width: 50%;
   margin: 0 auto;
-  border: 1px solid black;
+  /* border: 0.07rem solid black; */
+  align-items: start;
+  /* cursor: pointer; */
+}
+
+.container {
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  border: 0.1rem solid black;
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  min-height: 2rem;
+  /* padding: 0.4rem; */
+}
+
+.label__hover {
+  border: 0.1rem solid black;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
 }
 
 .radio {
@@ -17,17 +63,42 @@ body {
 
 .acc__content {
   display: none;
+  transition: 0.3s;
 }
 
 input:checked ~ .acc__content {
   display: block;
 }
 
-label:hover ~ .acc__content {
+.label__hover {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label__hover:hover ~ .acc__content {
   display: block;
 }
 
 .photo {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 35rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.4rem;
+  padding-bottom: 0.8rem;
 }
+
+.plus {
+  max-width: 1.2rem;
+}
+
+.plus__img {
+  width: 100%;
+  transform: rotate(45deg);
+}
+/* внизу сделал чтобы при наводке на картинку она оставалась на месте */
+.acc__content:hover {
+  display: block;
+  transition: 0.3s;
+}
+/* -------------------------------- */
