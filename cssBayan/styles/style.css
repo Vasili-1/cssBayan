@@ -10,6 +10,32 @@
   scroll-behavior: smooth;
 }
 
+.photo {
+  display: none;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.radio:checked ~ label .photo {
+  display: block;
+}
+
+.item:hover .photo {
+  display: block;
+}
+
+.radio {
+  /* appearance: none; */
+  display: none;
+  /* если none тогда нормально проподает кнопка! */
+}
+
+.plus__img {
+  width: 1.1rem;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -20,85 +46,49 @@ h1 {
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   max-width: 50%;
   margin: 0 auto;
   /* border: 0.07rem solid black; */
-  align-items: start;
-  /* cursor: pointer; */
 }
 
 .container {
   width: 100%;
 }
 
+.label__hover {
+  margin-bottom: 1rem;
+}
+
 .item {
-  width: 100%;
-  border: 0.1rem solid black;
-  border-top: none;
-  border-bottom: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  min-height: 2rem;
-  /* padding: 0.4rem; */
+  border: 0.07rem solid black;
 }
 
-.label__hover {
-  border: 0.1rem solid black;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0.5rem;
-  padding: 0.4rem;
-}
-
-.radio {
-  appearance: none;
-}
-
-.acc__content {
-  display: none;
-  transition: 0.3s;
-}
-
-input:checked ~ .acc__content {
-  display: block;
-}
-
-.label__hover {
-  cursor: pointer;
+.flex {
+  height: 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-
-.label__hover:hover ~ .acc__content {
-  display: block;
-}
-
-.photo {
-  max-width: 35rem;
-  display: block;
-  margin: 0 auto;
-  margin-top: 0.4rem;
-  padding-bottom: 0.8rem;
-}
-
-.plus {
-  max-width: 1.2rem;
-}
-
+/* Это поворот крестика !!! */
 .plus__img {
-  width: 100%;
   transform: rotate(45deg);
 }
-/* внизу сделал чтобы при наводке на картинку она оставалась на месте */
-.acc__content:hover {
-  display: block;
-  transition: 0.3s;
+
+.radio:checked ~ label .plus {
+  transform: rotate(45deg);
+  transition: 1s;
 }
-/* -------------------------------- */
+
+/* Это поворот крестика !!! */
+
+p:hover ~ .plus {
+  transform: rotate(45deg);
+  transition: 1s;
+}
+
+.flex:hover ~ p .plus {
+  transform: rotate(45deg);
+  transition: 1s;
+}
