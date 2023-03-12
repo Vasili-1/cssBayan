@@ -1,29 +1,40 @@
 * {
   margin: 0;
   padding: 0;
-  background: #f0eed1;
+  /* background: #f0eed1; */
+  background: blanchedalmond;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #119178;
+  color: grey;
   scroll-behavior: smooth;
 }
 
+.label__hover {
+  cursor: pointer;
+}
+
 .photo {
-  display: none;
-  width: 80%;
+  width: 0%;
   margin-left: 10%;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   border-radius: 1rem;
+  transition: all 1s;
+  cursor: pointer;
 }
 
 .radio:checked ~ label .photo {
-  display: block;
+  width: 80%;
+}
+.radio:checked ~ label div p {
+  color: black;
+  transition: all 0.5s;
 }
 
 .item:hover .photo {
-  display: block;
+  width: 80%;
+  transition: all 0.5s;
 }
 
 .radio {
@@ -33,7 +44,7 @@
 }
 
 .plus__img {
-  width: 1.1rem;
+  width: 1.5rem;
 }
 
 h1 {
@@ -48,47 +59,70 @@ h1 {
 .main {
   max-width: 50%;
   margin: 0 auto;
+  /* border: 0.3rem solid grey; */
+  /* border-radius: 1rem; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   /* border: 0.07rem solid black; */
 }
 
 .container {
   width: 100%;
+  border: 0.3rem solid grey;
+  border-radius: 1rem;
+  /* cursor: pointer; */
 }
-
+/*
 .label__hover {
   margin-bottom: 1rem;
 }
-
+*/
 .item {
-  border: 0.07rem solid black;
+  /* border: 0.07rem solid black; */
+  cursor: pointer;
+  border: 0.1rem solid grey;
 }
 
 .flex {
-  height: 2rem;
+  /*  */
+  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding-left: 1rem;
   padding-right: 1rem;
+  cursor: pointer;
 }
 /* Это поворот крестика !!! */
 .plus__img {
-  transform: rotate(45deg);
+  opacity: 0;
+  transform: rotate(315deg);
+  transition: all 1s;
+  cursor: pointer;
 }
 
-.radio:checked ~ label .plus {
-  transform: rotate(45deg);
-  transition: 1s;
+.radio:checked ~ label .plus .plus__img {
+  transform: rotate(0deg);
+  transition: all 1s;
 }
 
-/* Это поворот крестика !!! */
-
-p:hover ~ .plus {
-  transform: rotate(45deg);
-  transition: 1s;
+.item:hover .plus__img {
+  transform: rotate(0deg);
+  transition: all 1s;
+}
+.radio:checked .container:hover .flex p {
+  transition: all 2s;
+  color: black;
 }
 
-.flex:hover ~ p .plus {
-  transform: rotate(45deg);
-  transition: 1s;
+.container:hover .plus__img {
+  opacity: 1;
+}
+.container:hover .flex p {
+  color: black;
+  transition: all 0.5s;
+}
+
+p {
+  transition: all 0.5s;
 }
